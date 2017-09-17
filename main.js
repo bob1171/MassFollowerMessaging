@@ -43,7 +43,7 @@ function postmethod(){
       $.ajax({
           type: "POST",
           url: "https://scratch.mit.edu/site-api/comments/user/" + current + "/add/",
-          data: JSON.stringify({"content":message + " random letters to avoid spam:  + randomchars, "parent_id":"","commentee_id":""})
+          data: JSON.stringify({"content":message + " random letters to avoid spam: "+randomchars(),"parent_id":"","commentee_id":""})
       });
       console.log("Sent to user " + current);
     }
@@ -53,18 +53,13 @@ function postmethod(){
     console.log("Canceled.");
   }
 };
-
 console.log("Stating..."); //Debug
 start(); 
-
 function randomchars() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
   for (var i = 0; i < 5; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
-
   return text;
 }
-
 console.log(makeid());
