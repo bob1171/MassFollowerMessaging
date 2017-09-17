@@ -62,4 +62,3 @@ function randomchars() {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   return text;
 }
-console.log(makeid());
